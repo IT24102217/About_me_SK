@@ -187,7 +187,7 @@ const AboutTabs = () => {
                   ml: 5
                 }}
               >
-                SLIIT (2024 - Present)
+                Sri Lanka Institute of Information Technology [SLIIT UNI] (2024 - Present)
               </Typography>
             </Box>
 
@@ -314,6 +314,32 @@ const AboutTabs = () => {
               </Typography>
             </Box>
 
+            {/* Full Stack Developer(MERN) */}
+            <Box sx={{ mb: 4, pb: 3, borderBottom: '1px solid rgba(126, 240, 209, 0.1)' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
+                <Box component="span" sx={{ fontSize: '1.5rem' }}>💻</Box>
+                <Typography 
+                  variant="h6" 
+                  sx={{ 
+                    color: '#61DAFB', 
+                    fontWeight: 600,
+                    fontSize: '1.3rem'
+                  }}
+                >
+                  Full Stack Developer(MERN)
+                </Typography>
+              </Box>
+              <Typography 
+                sx={{ 
+                  color: '#e6f0ff', 
+                  fontSize: '1rem',
+                  ml: 5
+                }}
+              >
+                Dec 2025 - Present
+              </Typography>
+            </Box>
+
             {/* Crypto, Forex and stock Trader */}
             <Box>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
@@ -354,9 +380,66 @@ const ProjectTabs = () => {
   };
 
   const projects = {
-    mobile: [],
-    web: [],
-    ai: []
+    mobile: [
+      // {
+      //   title: 'Mobile Chat Application',
+      //   tech: ['Flutter', 'Firebase'],
+      //   description: 'A Flutter chat app with real-time messaging and Firebase auth.',
+      //   image: 'https://via.placeholder.com/400x250/6B46C1/FFFFFF?text=Mobile+Chat'
+      // },
+      // {
+      //   title: 'WizyWall Wallpaper App',
+      //   tech: ['Flutter', 'API'],
+      //   description: 'Browse, search, and download high-quality wallpapers.',
+      //   image: 'https://via.placeholder.com/400x250/22C55E/FFFFFF?text=WizyWall+App'
+      // },
+      // {
+      //   title: 'Food Delivery App',
+      //   tech: ['Flutter', 'Firebase'],
+      //   description: 'Order food, manage cart, and track delivery in real time.',
+      //   image: 'https://via.placeholder.com/400x250/F59E0B/FFFFFF?text=Food+Delivery'
+      // }
+    ],
+    web: [
+      {
+        title: 'Online Book store management System',
+        tech: ['HTML', 'CSS' , 'Spring Boot', 'MySQL'],
+        description: 'BookStore App with secure auth and local storage.',
+        image: '/Project Image/photo-collage2.png.png'
+      },
+      // {
+      //   title: 'Event Ticketing Platform',
+      //   tech: ['React', 'Node.js', 'MongoDB'],
+      //   description: 'Book and manage event tickets with secure payments.',
+      //   image: 'https://via.placeholder.com/400x250/A855F7/FFFFFF?text=Event+Ticketing'
+      // },
+      // {
+      //   title: 'Tourism Package Platform',
+      //   tech: ['React', 'Express', 'PostgreSQL'],
+      //   description: 'Explore and book travel packages with a user-friendly UI.',
+      //   image: 'https://via.placeholder.com/400x250/06B6D4/FFFFFF?text=Tourism+Package'
+      // }
+    ],
+    ai: [
+      {
+        title: 'Letter Recognition System',
+        tech: ['Python', 'PyTorch', 'Deep Learning','RestNet 18'],
+        description: 'Deep learning model for English letter recognition using RestNet 18 Model.',
+        image: '/Project Image/photo-collage.png.png'
+      },
+      {
+        title: 'Face Recognition System',
+        tech: ['Python', 'Scikit-learn', 'SVM' ,'Deep Learning'],
+        description: 'ML model for classification and Deep learning-based face recognition.',
+        image: '/Project Image/photo-collage1.png.png'
+      },
+      // {
+      //   title: 'Natural Language Processing System',
+      //   tech: ['Python', 'NLTK', 'Transformers'],
+      //   description: 'NLP system for text analysis, sentiment detection, and language processing tasks.',
+      //   image: 'https://via.placeholder.com/400x250/7C3AED/FFFFFF?text=NLP+System'
+      // }
+    ]
   };
 
   const allProjects = [...projects.mobile, ...projects.web, ...projects.ai];
@@ -402,60 +485,299 @@ const ProjectTabs = () => {
         </Tabs>
       </Box>
 
-      <Grid container spacing={3}>
+      <Box 
+        className="projects-grid"
+        sx={{ 
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', sm: 'repeat(3, 1fr)' },
+          gap: 2,
+          maxWidth: '1200px',
+          margin: '0 auto',
+          padding: '0 20px'
+        }}
+      >
         {getProjects().map((project, index) => (
-          <Grid item xs={12} md={6} lg={4} key={index}>
+          <Box 
+            key={index} 
+            sx={{ 
+              display: 'flex',
+              width: '100%'
+            }}
+          >
             <Card
               sx={{
-                backgroundColor: 'rgba(20, 30, 70, 0.7)',
+                backgroundColor: 'rgba(25, 35, 70, 0.92)',
                 border: '1px solid rgba(126, 240, 209, 0.15)',
-                borderRadius: '15px',
-                height: '100%',
-                transition: 'all 0.3s ease',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+                borderRadius: '16px',
+                width: '100%',
+                height: '380px',
+                transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                boxShadow: '0 6px 24px rgba(0, 0, 0, 0.6)',
+                display: 'flex',
+                flexDirection: 'column',
+                overflow: 'hidden',
+                position: 'relative',
                 '&:hover': {
-                  transform: 'translateY(-8px)',
-                  boxShadow: '0 12px 40px rgba(126, 240, 209, 0.3)',
-                  border: '1px solid rgba(126, 240, 209, 0.4)'
+                  transform: 'translateY(-6px) scale(1.01)',
+                  boxShadow: '0 16px 40px rgba(126, 240, 209, 0.15)',
+                  border: '1px solid rgba(126, 240, 209, 0.3)',
+                  '& img': {
+                    transform: 'scale(1.08)'
+                  }
                 }
               }}
             >
-              <CardContent sx={{ p: 3 }}>
+              {/* Project Image */}
+              <Box
+                sx={{
+                  width: '100%',
+                  height: '180px',
+                  overflow: 'hidden',
+                  backgroundColor: 'rgba(20, 30, 50, 0.9)',
+                  position: 'relative'
+                }}
+              >
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transition: 'transform 0.6s ease'
+                  }}
+                />
+                {/* Gradient overlay */}
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    height: '60px',
+                    background: 'linear-gradient(to top, rgba(15, 25, 55, 0.8), transparent)'
+                  }}
+                />
+              </Box>
+
+              <CardContent sx={{ p: 3, display: 'flex', flexDirection: 'column', flexGrow: 1, gap: 1.5 }}>
                 <Typography 
                   variant="h6" 
                   sx={{ 
-                    color: '#7ef0d1', 
-                    mb: 2, 
-                    fontWeight: 600,
-                    fontSize: '1.2rem'
+                    color: '#ffffff', 
+                    fontWeight: 700,
+                    fontSize: '1.1rem',
+                    lineHeight: 1.3,
+                    letterSpacing: '-0.2px',
+                    textAlign: 'left'
                   }}
                 >
                   {project.title}
                 </Typography>
                 <Typography 
                   sx={{ 
-                    color: '#4be0c6', 
-                    mb: 2,
-                    fontSize: '0.9rem',
-                    fontWeight: 500
-                  }}
-                >
-                  {project.tech}
-                </Typography>
-                <Typography 
-                  sx={{ 
-                    color: '#e6f0ff', 
-                    fontSize: '0.95rem',
-                    lineHeight: 1.6
+                    color: '#9bb5d1', 
+                    fontSize: '0.85rem',
+                    lineHeight: 1.5,
+                    flexGrow: 1,
+                    fontWeight: 400,
+                    opacity: 0.9
                   }}
                 >
                   {project.description}
                 </Typography>
+                {/* Tech Tags */}
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mt: 1 }}>
+                  {project.tech.map((tech, idx) => (
+                    <Box
+                      key={idx}
+                      sx={{
+                        px: 2.5,
+                        py: 0.6,
+                        backgroundColor: 'transparent',
+                        border: '2px solid rgba(75, 224, 198, 0.4)',
+                        borderRadius: '25px',
+                        color: '#4be0c6',
+                        fontSize: '0.85rem',
+                        fontWeight: 700,
+                        textTransform: 'capitalize',
+                        letterSpacing: '0.2px',
+                        transition: 'all 0.3s ease',
+                        cursor: 'default',
+                        '&:hover': {
+                          backgroundColor: 'rgba(75, 224, 198, 0.08)',
+                          borderColor: '#4be0c6',
+                          transform: 'scale(1.05)'
+                        }
+                      }}
+                    >
+                      {tech}
+                    </Box>
+                  ))}
+                </Box>
               </CardContent>
             </Card>
-          </Grid>
+          </Box>
         ))}
-      </Grid>
+      </Box>
+    </Box>
+  );
+};
+
+const TradingTabs = () => {
+  const [value, setValue] = useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <Box sx={{ width: '100%', mt: 6 }}>
+      <Box sx={{ borderBottom: 1, borderColor: 'rgba(126, 240, 209, 0.2)', mb: 4 }}>
+        <Tabs 
+          value={value} 
+          onChange={handleChange} 
+          centered
+          sx={{
+            '& .MuiTab-root': {
+              color: '#e6f0ff',
+              fontSize: '1rem',
+              fontWeight: 600,
+              textTransform: 'none',
+              minWidth: 120,
+              '&:hover': {
+                color: '#7ef0d1'
+              }
+            },
+            '& .Mui-selected': {
+              color: '#7ef0d1 !important'
+            },
+            '& .MuiTabs-indicator': {
+              backgroundColor: '#7ef0d1',
+              height: 3
+            }
+          }}
+        >
+          <Tab label="My Analysis" />
+          <Tab label="Profit Card" />
+        </Tabs>
+      </Box>
+
+      {/* My Analysis Tab */}
+      {value === 0 && (
+        <Box sx={{ py: 3 }}>
+          <Box 
+            sx={{ 
+              display: 'grid',
+              gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)' },
+              gap: 3,
+              maxWidth: '1000px',
+              mx: 'auto',
+              px: 2
+            }}
+          >
+            {/* Analysis Images - 2 per row */}
+            {[
+              '/acard/WhatsApp Image 2025-11-28 at 14.17.19_39c3ce48.jpg',
+              '/acard/WhatsApp Image 2025-11-28 at 14.17.20_e0766fd6.jpg',
+              '/acard/WhatsApp Image 2025-11-28 at 14.20.14_786e9cd0.jpg',
+              '/acard/WhatsApp Image 2025-11-28 at 14.20.15_1a517b79.jpg',
+              '/acard/WhatsApp Image 2025-11-28 at 14.20.17_1e326835.jpg',
+              '/acard/WhatsApp Image 2025-11-28 at 14.20.17_5a09c956.jpg'
+            ].map((image, index) => (
+              <Box key={index}>
+                <Box
+                  sx={{
+                    backgroundColor: 'rgba(30, 50, 100, 0.85)',
+                    borderRadius: '16px',
+                    p: 2,
+                    border: '1px solid rgba(126, 240, 209, 0.3)',
+                    boxShadow: '0 8px 32px rgba(126, 240, 209, 0.15)',
+                    transition: 'all 0.3s ease',
+                    height: 'fit-content',
+                    '&:hover': {
+                      transform: 'translateY(-5px)',
+                      boxShadow: '0 15px 40px rgba(126, 240, 209, 0.2)',
+                      border: '1px solid rgba(126, 240, 209, 0.5)'
+                    }
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={image}
+                    alt={`Analysis ${index + 1}`}
+                    sx={{
+                      width: '100%',
+                      height: '300px',
+                      objectFit: 'cover',
+                      borderRadius: '12px',
+                      display: 'block'
+                    }}
+                  />
+                </Box>
+              </Box>
+            ))}
+          </Box>
+        </Box>
+      )}
+
+      {/* Profit Card Tab */}
+      {value === 1 && (
+        <Box sx={{ py: 3 }}>
+          <Box 
+            sx={{ 
+              display: 'grid',
+              gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
+              gap: 3,
+              maxWidth: '1200px',
+              mx: 'auto',
+              px: 2
+            }}
+          >
+            {/* Profit Card Images - 3 per row */}
+            {[
+              '/prcard/IMG-20251128-WA0016.jpg',
+              '/prcard/IMG-20251128-WA0017.jpg',
+              '/prcard/IMG-20251128-WA0018.jpg',
+              '/prcard/IMG-20251128-WA0019.jpg',
+              '/prcard/IMG-20251128-WA0020.jpg',
+              '/prcard/IMG-20251128-WA0021.jpg'
+            ].map((image, index) => (
+              <Box key={index}>
+                <Box
+                  sx={{
+                    backgroundColor: 'rgba(30, 50, 100, 0.85)',
+                    borderRadius: '16px',
+                    p: 2,
+                    border: '1px solid rgba(126, 240, 209, 0.3)',
+                    boxShadow: '0 8px 32px rgba(126, 240, 209, 0.15)',
+                    transition: 'all 0.3s ease',
+                    height: 'fit-content',
+                    '&:hover': {
+                      transform: 'translateY(-5px)',
+                      boxShadow: '0 15px 40px rgba(126, 240, 209, 0.2)',
+                      border: '1px solid rgba(126, 240, 209, 0.5)'
+                    }
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={image}
+                    alt={`Profit Card ${index + 1}`}
+                    sx={{
+                      width: '100%',
+                      height: '250px',
+                      objectFit: 'cover',
+                      borderRadius: '12px',
+                      display: 'block'
+                    }}
+                  />
+                </Box>
+              </Box>
+            ))}
+          </Box>
+        </Box>
+      )}
     </Box>
   );
 };
@@ -864,8 +1186,65 @@ function App() {
               }
             }}
           >
-            Trading 
+            About My Trading Journey
           </Typography>
+          
+          {/* Trading Journey Content */}
+          <Box 
+            sx={{ 
+              maxWidth: '900px',
+              mx: 'auto',
+              backgroundColor: 'rgba(30, 50, 100, 0.85)',
+              borderRadius: '20px',
+              p: 6,
+              border: '1px solid rgba(126, 240, 209, 0.3)',
+              boxShadow: '0 8px 32px rgba(126, 240, 209, 0.15)'
+            }}
+          >
+            <Typography 
+              sx={{ 
+                color: '#e6f0ff', 
+                fontSize: '1.1rem',
+                lineHeight: 1.8,
+                textAlign: 'center',
+                fontWeight: 400,
+                letterSpacing: '0.3px'
+              }}
+            >
+              I'm an experienced trader with 3+ years in the markets, specializing in Elliott Wave, Neo Wave, and Smart Money Concepts. I combine technical analysis, chart patterns, time-series forecasting, and strong money management to trade and invest across crypto, forex, and stocks. My approach is structured, data-driven, and focused on identifying high-probability market opportunities while managing risk with discipline.
+            </Typography>
+            
+            {/* Trading Skills Tags */}
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, justifyContent: 'center', mt: 4 }}>
+              {['Elliott Wave', 'Neo Wave', 'Smart Money Concepts', 'Technical Analysis', 'Chart Patterns', 'Time-Series Forecasting', 'Risk Management', 'Crypto Trading', 'Forex', 'Stock Market','SK','SMC','SNR','Fundermental'].map((skill, index) => (
+                <Box
+                  key={index}
+                  sx={{
+                    px: 3,
+                    py: 1,
+                    backgroundColor: 'transparent',
+                    border: '2px solid rgba(126, 240, 209, 0.4)',
+                    borderRadius: '25px',
+                    color: '#7ef0d1',
+                    fontSize: '0.9rem',
+                    fontWeight: 600,
+                    transition: 'all 0.3s ease',
+                    cursor: 'default',
+                    '&:hover': {
+                      backgroundColor: 'rgba(126, 240, 209, 0.08)',
+                      borderColor: '#7ef0d1',
+                      transform: 'scale(1.05)'
+                    }
+                  }}
+                >
+                  {skill}
+                </Box>
+              ))}
+            </Box>
+          </Box>
+
+          {/* Trading Tabs */}
+          <TradingTabs />
         </Container>
       </Box>
 

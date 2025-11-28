@@ -707,6 +707,24 @@
   }
 }
 
+/* Project Grid Layout - Force 3 items per row */
+.projects-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 16px !important;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Mobile: single column */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    padding: 0 10px;
+  }
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .whatsapp-float {
@@ -731,5 +749,11 @@
   .scroll-icon {
     width: 26px;
     height: 26px;
+  }
+  
+  .projects-grid .MuiGrid-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: unset;
   }
 }
